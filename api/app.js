@@ -22,7 +22,7 @@ app.use((error, req, res, next) => {
   console.error(error);
 
   const data = {
-    message: message.error
+    message: error.message,
   }
   res.status(error.status)
     .json(data)
