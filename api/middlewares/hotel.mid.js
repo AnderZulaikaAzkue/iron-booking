@@ -2,7 +2,7 @@ const Hotel = require('../models/hotel.model');
 const createError = require('http-errors');
 
 module.exports.exists = (req, res, next) => {
-  const hotelId = req.params.projectId || req.params.id;
+  const hotelId = req.params.hotelId || req.params.id;
   Hotel.findById(hotelId)
   /*.populate("comments")*/
   .then((hotel) => {
