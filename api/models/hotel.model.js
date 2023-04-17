@@ -31,9 +31,25 @@ const hotelSchema = new Schema(
       min: 0,
       max: 5,
     },
-  }, 
-  { timestamps: true }
-);
+  }, { 
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: function (doc, ret) {
+        delete ret.__v;
+        ret.id = ret._id;
+        delete ret._id;
+        return ret;
+      }
+    }
+  })
+  
+  hotelSchema.virtual("comments", {
+    ref:"Comment", 
+    localField: "_id", 
+    foreignField: "hotel", 
+    justOne: false,
+  });
 
 
 const Hotel = mongoose.model('Hotel', hotelSchema);
