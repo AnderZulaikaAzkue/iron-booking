@@ -44,12 +44,12 @@ const hotelSchema = new Schema(
     }
   })
   
-  hotelSchema.virtual("comments", {
+  /*hotelSchema.virtual("comments", {
     ref:"Comment", 
     localField: "_id", 
     foreignField: "hotel", 
     justOne: false,
-  });
+  })*/;
 
 
 const Hotel = mongoose.model('Hotel', hotelSchema);

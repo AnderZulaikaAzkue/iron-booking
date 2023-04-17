@@ -4,7 +4,7 @@ const createError = require('http-errors');
 module.exports.exists = (req, res, next) => {
   const hotelId = req.params.projectId || req.params.id;
   Hotel.findById(hotelId)
-  .populate("comments")
+  /*.populate("comments")*/
   .then((hotel) => {
     if (hotel) {
       req.hotel = hotel;

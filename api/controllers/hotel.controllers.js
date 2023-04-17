@@ -2,7 +2,7 @@ const Hotel = require('../models/hotel.model');
 
 module.exports.list = (req, res, next) => {
   Hotel.find()
-    .populate("comments")
+    /*.populate("comments")*/
     .then((hotels) => res.json(hotels))
     .catch(next);
 }
@@ -15,16 +15,16 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.update = (req, res, next) => {
-  Object.assign(req.project, req.body);
-  req.project.save()
-    .then((project) => res.json(project))
+  Object.assign(req.hotel, req.body);
+  req.hotel.save()
+    .then((hotel) => res.json(hotel))
     .catch(next);
 }
 
-module.exports.detail = (req, res, next) => res.json(req.project)
+module.exports.detail = (req, res, next) => res.json(req.hotel)
 
 module.exports.delete = (req, res, next) => {
-  Project.deleteOne({_id: req.project.id })
+  Hotel.deleteOne({_id: req.hotel.id })
   .then(() => res.status(204).send())
   .catch(next)
 }
