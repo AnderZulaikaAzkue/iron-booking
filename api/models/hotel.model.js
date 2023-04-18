@@ -12,7 +12,7 @@ const hotelSchema = new Schema(
       required: true
     },
     picture: {
-      type: String,
+      type: [String],
       required: true
     },
     address: {
@@ -44,12 +44,19 @@ const hotelSchema = new Schema(
     }
   })
   
-  /*hotelSchema.virtual("comments", {
-    ref:"Comment", 
+  /*hotelSchema.virtual("room", {
+    ref:"Room", 
     localField: "_id", 
     foreignField: "hotel", 
     justOne: false,
-  })*/;
+  });*/
+
+  /*hotelSchema.virtual("comments", {
+    ref:"Comment", 
+    localField: "_id", 
+    foreignField: "project", 
+    justOne: false,
+  });*/
 
 
 const Hotel = mongoose.model('Hotel', hotelSchema);

@@ -7,7 +7,6 @@ const roomSchema = new Schema(
       type: String,
       required: true
     },
-  
   price: {
     type: Number,
     required: true,
@@ -20,6 +19,8 @@ const roomSchema = new Schema(
     type: Number,
     required: true,
   },
+  roomNumbers: 
+    [{number: Number, unavailableDates: {type: [Date]}}],
  }, { 
     timestamps: true,
     toJSON: {

@@ -3,7 +3,7 @@ const createError = require("http-errors");
 
 module.exports.list = (req, res, next) => {
   Hotel.find()
-    .populate("room")
+    //.populate("room")
     .then((hotels) => res.json(hotels))
     .catch(next);
 }
