@@ -22,7 +22,7 @@ const clientSchema = new Schema(
       type: String,
       required: "Client username is required",
       minlength: [3, "Client name needs at least 3 chars"],
-      match: [/^[a-z0-9]+$/, "Client must be lowercase and without spaces"],
+      match: [/^[a-z0-9]+$/, "Name must be lowercase and without spaces"],
       lowercase: true,
       unique: true,
     },
