@@ -14,10 +14,6 @@ const clientSchema = new Schema(
       required: "Client email is required",
       match: [/^\S+@\S+\.\S+$/, "Client email must be valid"],
     },
-    confirm: {
-      type: Boolean,
-      default: process.env.USER_CONFIRMATION_REQUIRED === "false",   //By default while production stage leave as TRUE in this way we don´t have to confirm emails
-    },
     username: {
       type: String,
       required: "Client username is required",
@@ -81,13 +77,6 @@ clientSchema.pre("save", function (next) {
 clientSchema.methods.checkPassword = function (password) {
   return bcrypt.compare(password, this.password);
 };
-
-clientSchema.virtual("projects", {
-  ref: "Project",
-  localField: "_id",
-  foreignField: "authors", // TODO
-  justOne: false,
-});
 
 const Client = mongoose.model("Client", clientSchema);
 module.exports = Client;

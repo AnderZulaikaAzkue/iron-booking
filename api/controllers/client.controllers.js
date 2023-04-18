@@ -16,14 +16,14 @@ module.exports.create = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.client);
 
 module.exports.delete = (req, res, next) => {
-  Client.deleteOne({ _id: req.user.id })
+  Client.deleteOne({ _id: req.client.id })
     .then(() => res.status(204).send())
     .catch(next);
 };
 
 module.exports.update = (req, res, next) => {
-  Object.assign(req.user, req.body);
-  req.user
+  Object.assign(req.client, req.body);
+  req.client
     .save()
     .then((client) => res.json(client))
     .catch(next);

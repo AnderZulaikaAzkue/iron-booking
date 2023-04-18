@@ -19,11 +19,11 @@ router.get("/rooms/:id", room.detail);
 router.patch("/rooms/:id", roomMid.exists, room.update);
 router.delete("/roomds/:id/:hotelid", roomMid.exists, room.delete);
 
-router.get("clients", client.list);
+router.get("/clients", client.list);
 router.post("/clients", client.create);
 //router.get("/clients/:id/confirm", clientMid.exists, client.confirm);
-//router.patch("/clients/:id", clientMid, client.update);
-//router.delete("/clients/:id", clientMid, client.delete);
+router.patch("/clients/:id", clientMid.exists, client.update);
+router.delete("/clients/:id", clientMid.exists, client.delete);
 
 
 

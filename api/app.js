@@ -4,7 +4,7 @@ const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const createError = require('http-errors');
-const secure = require(".middlewares/secure.mid");
+const secure = require("./middlewares/secure.mid");
 
 require('./config/db.config');
 const app = express();
