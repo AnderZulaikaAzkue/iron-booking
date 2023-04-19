@@ -21,7 +21,7 @@ router.patch("/rooms/:id", roomMid.exists, room.update);
 router.delete("/rooms/:id/:hotelid", roomMid.exists, room.delete);
 
 router.get("/clients", client.list);
-router.post("/clients", client.create);
+router.post("/register", client.create);
 router.get("/clients/:id/confirm", clientMid.exists, client.confirm);
 router.patch("/clients/:id", secure.auth, client.update);
 router.delete("/clients/:id", secure.auth, client.delete);
