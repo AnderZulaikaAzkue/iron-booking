@@ -14,6 +14,10 @@ const clientSchema = new Schema(
       required: "Client email is required",
       match: [/^\S+@\S+\.\S+$/, "Client email must be valid"],
     },
+    confirm: {
+      type: Boolean,
+      default: false,   //By default while production stage leave as TRUE in this way we don´t have to confirm emails
+    },
     username: {
       type: String,
       required: "Client username is required",
