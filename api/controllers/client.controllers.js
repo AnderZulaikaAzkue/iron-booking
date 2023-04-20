@@ -3,23 +3,23 @@ const createError = require("http-errors");
 const mailer = require("../config/mailer.config");
 const jwt = require("jsonwebtoken");
 
-const clientConfirmationRequired = process.env.USER_CONFIRMATION_REQUIRED= true
+const clientConfirmationRequired = process.env.USER_CONFIRMATION_REQUIRED = true
 
 module.exports.list = (req, res, next) => {
-  Client.find() 
+  Client.find()
     .then((clients) => res.json(clients))
     .catch(next);
 };
 
 module.exports.create = (req, res, next) => {
   Client.create(req.body)
-  .then((client) => {
-    if (clientConfirmationRequired) {
-    mailer.sendConfirmationEmail(client);
-  }
-    res.status(201).json(client);
-  })
-  .catch(next);
+    .then((client) => {
+      if (clientConfirmationRequired) {
+        mailer.sendConfirmationEmail(client);
+      }
+      res.status(201).json(client);
+    })
+    .catch(next);
 };
 
 module.exports.detail = (req, res, next) => res.json(req.client);
@@ -32,7 +32,7 @@ module.exports.delete = (req, res, next) => {
 
 module.exports.update = (req, res, next) => {
   Object.assign(req.user, req.body);
-  req.client
+  req.user
     .save()
     .then((client) => res.json(client))
     .catch(next);
@@ -60,10 +60,12 @@ module.exports.login = (req, res, next) => {
         return next(createError(401, "Please confirm your account"));
       }
 
-      client.checkPassword(req.body.password).then((match) => {
+      return client.checkPassword(req.body.password).then((match) => {
         if (!match) {
           return next(createError(401, "Invalid credentials"));
         }
+        req.user = client;
+        console.log(req.user)
 
         const token = jwt.sign({ sub: client.id, exp: Date.now() / 1000 + 3_600}, 
         "supersecret");
