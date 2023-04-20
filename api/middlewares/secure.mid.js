@@ -14,7 +14,7 @@ module.exports.cleanBody = (req, res, next) => {
 };
 
 module.exports.auth = (req, res, next) => {
-  const token = req.headers.authorization?.split(" ")?.[1]; 
+  const token = req.headers.authorization?.split(" ")?.[1];
 
   if (!token) {
     return next(createError(401, "Missing access token"));
@@ -36,4 +36,29 @@ module.exports.auth = (req, res, next) => {
   } catch (err) {
     next(createError(401, err));
   }
-};
+
+  module.exports.checkRole = (req, res, next) => {
+    const token = req.headers.authorization?.split(" ")?.[1];
+
+    if (!token) {
+      return next(createError(401, "Missing access token"));
+    }
+
+    try {
+      const decoded = jwt.verify(token, "supersecret");
+
+      Client.findById(decoded.sub)
+        .then((client) => {
+          if (req.client?.role === role) {
+            req.user = client;
+            next();
+          } else {
+            next(createError(403, 'Forbidden'))
+          }
+        })
+        .catch(next);
+    } catch (err) {
+      next(createError(401, err));
+    }
+  }
+}

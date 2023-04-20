@@ -15,6 +15,10 @@ const hotelSchema = new Schema(
       type: [String],
       required: true
     },
+    city: {
+      type: String,
+      required: true
+    },
     address: {
       type: String,
       required: true
@@ -24,6 +28,10 @@ const hotelSchema = new Schema(
     },
     price: {
       type: Number,
+      required: true,
+    },
+    type: {
+      type: String,
       required: true,
     },
     rating: {
