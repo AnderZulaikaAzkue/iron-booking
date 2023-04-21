@@ -29,9 +29,6 @@ router.delete("/clients/:id", secure.auth, secure.isLogged, client.delete);
 router.post("/login", client.login);
 
 
-
-
-
 module.exports = router;
 
 

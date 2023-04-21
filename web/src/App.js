@@ -1,10 +1,14 @@
+import { Routes, Route, } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
 import HotelsList from "./components/hotelList/hotelList";
 
 function App() {
   return (
-   <>
-    <HotelsList/>
-   </>
+
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
+
   );
 }
 
