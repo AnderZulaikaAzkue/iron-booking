@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import clientsService from '../../../services/clients';
 
 function ClientsForm() {
-  
+  // https://react-hook-form.com/get-started#Applyvalidation
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ function ClientsForm() {
 
   const onClientSubmit = async (client) => {
     try {
+      console.log(client)
       setServerError(undefined);
       console.debug('Registering...')
       client = await clientsService.create(client);
