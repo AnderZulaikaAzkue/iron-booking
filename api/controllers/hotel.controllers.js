@@ -29,3 +29,17 @@ module.exports.delete = (req, res, next) => {
   .then(() => res.status(204).send())
   .catch(next)
 }
+
+/*module.exports.searchByCity = async (req, res, next) => {
+  const cities = req.query.cities.split(",");
+  try {
+    const list = await Promise.all(
+      cities.map((city) => {
+        return Hotel.countDocuments({ city: city });
+      })
+    );
+    res.status(200).json(list);
+  } catch (err) {
+    next(err);
+  }
+};*/

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const { isValidUrl } = require("../utils/validations");
 
 const roomSchema = new Schema(
   {
