@@ -1,0 +1,10 @@
+
+.navbar{
+  height: 70px;
+  background-color: #094fb2;
+}
+
+.navContainer{
+  max-width: 1024px;
+  color: white;
+}

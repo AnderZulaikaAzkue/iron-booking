@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthStore'
+import "./Navbar.css";
+
 
 import logo from '../../assets/img/logoOne.svg'
 
@@ -9,8 +11,11 @@ const renderNavLinkClassName = ({ isActive }) => isActive ? 'nav-link active' : 
 function Navbar() {
   const { user, logout } = useContext(AuthContext);
   return (
-    <nav className="navbar navbar-expand-lg bg-warning" data-bs-theme="success" >
+    
+    <nav className="navbar navbar-expand-lg " data-bs-theme="dark"style={{ color: "inherit", textDecoration: "none" }} >
       <div className="container">
+      
+      <div className="navContainer"></div>
         <Link className='navbar-brand' to="/">
           <img src={logo} alt="Iron Booking" width="30" height="30" />
         </Link>
@@ -38,6 +43,8 @@ function Navbar() {
           </ul>
         </div>
       </div>
+     
+      
     </nav>
   )
 }
