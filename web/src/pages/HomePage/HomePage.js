@@ -1,18 +1,14 @@
-import HotelsList from "../../components/hotelList/HotelsList";
+import HotelByCity from "../../components/hotelByCity/hotelByCity";
 import "./HomePage.css";
 
 const HomePage = () => {
   return (
-    
-      
-      <div className="homeContainer">
-     
-        
-        <h1 className="homeTitle">Browse by property type</h1>
-        
-        <h1 className="homeTitle">Homes guests love</h1>
- 
-      
+
+    <div className="homeContainer">
+      <h1 className="homeTitle">Browse by property type</h1>
+
+      <h1 className="homeTitle">Most Popular Cities</h1>
+      <HotelByCity />
     </div>
   );
 };
