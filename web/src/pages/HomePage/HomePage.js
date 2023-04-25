@@ -1,6 +1,7 @@
 import HotelByCity from "../../components/hotelByCity/hotelByCity";
 import HotelByCity2 from "../../components/hotelByCity/hotelByCity2";
 import HotelByType from "../../components/hotelByType/hotelByType";
+
 import "./HomePage.css";
 
 const HomePage = () => {

@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <AuthStore>
+      
         <Navbar />
         <Routes>
           <Route path="/register" element={<RegisterPage />} />

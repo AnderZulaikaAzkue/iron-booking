@@ -50,8 +50,7 @@ function HotelByType() {
             className="featuredImg"
           />
           <div className="featuredTitles">
-            <h2>5 Cabins </h2>
-            <h3> 1 properties</h3>
+            <h3> 5 Cabins</h3>
           </div>
         </Link>
       </div>
