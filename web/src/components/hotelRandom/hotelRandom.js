@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import hotelsService from '../../services/hotels';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow,
+  MDBCol} from 'mdb-react-ui-kit';
+
 
 function HotelRandom() {
   const [hotels, setHotels] = useState([]);
@@ -13,10 +16,18 @@ function HotelRandom() {
   return (
     <>
       {hotels.map((hotel) => 
-      <div className=" card card-body col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch"  key={hotel.city}>{hotel.city}
-      <h3> {hotel.name} </h3>
-      <img src={hotel.picture} alt="hotelimg" width={250} />
+      <div key={hotel.city}>{hotel.city}
+      <MDBRow className='row-cols-1 row-cols-md-2 g-4'>
+      <MDBCol>
+      <MDBCard className='mb-3'>
+      <MDBCardImage position='top' src= {hotel.picture} width={250}  alt='...' />
+      <MDBCardBody>
+      <MDBCardTitle>{hotel.name}</MDBCardTitle>
       <a href="/detail" class="btn btn-primary">Book a room</a>
+      </MDBCardBody>
+      </MDBCard>
+      </MDBCol>
+    </MDBRow>
       </div>
       )}
     </>

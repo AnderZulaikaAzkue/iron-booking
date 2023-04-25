@@ -43,6 +43,8 @@ function HotelByType() {
         </Link>
       </div>
       <div className="featuredItem">
+      <div className='bg-image hover-overlay'>
+
         <Link className='city-link' to="/">
           <img
             src="https://static.dezeen.com/uploads/2021/01/niliaitta-cabin-studio-puisto-finland_dezeen_2364_sq3.jpg"
@@ -53,6 +55,8 @@ function HotelByType() {
             <h3> 5 Cabins</h3>
           </div>
         </Link>
+        <div className='mask overlay' style={{ backgroundColor: 'rgba(57, 192, 237, 0.2)' }}></div>
+</div>
       </div>
     </div>
   )
