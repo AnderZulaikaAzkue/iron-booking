@@ -11,10 +11,10 @@ const secure = require("../middlewares/secure.mid");
 router.get("/hotels", hotel.list);
 router.post("/hotels",/*secure.isLogged, secure.isAdmin,*/ hotel.create);
 router.get("/hotels/:id", /*hotelMid.exists,*/ hotel.detail);
-router.patch("/hotels/:id",secure.isLogged, secure.isAdmin, /*hotelMid.exists,*/ hotel.update);
+router.patch("/hotels/:id",/*secure.isLogged, secure.isAdmin, /*hotelMid.exists,*/ hotel.update);
 router.delete("/hotels/:id",secure.isLogged, secure.isAdmin, /*hotelMid.exists,*/ hotel.delete)
 //router.get("/hotels/searchByCity", hotel.searchByCity)
-//router.get("/searchByType", hotel.searchByType)
+//router.get("/searchByType", hotel.searchByType) 
 
 router.get("/rooms", room.list);
 router.post("/rooms/:hotelid",secure.isLogged, secure.isAdmin, room.create);

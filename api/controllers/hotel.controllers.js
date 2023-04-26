@@ -2,7 +2,14 @@ const Hotel = require('../models/hotel.model');
 const createError = require("http-errors");
 
 module.exports.list = (req, res, next) => {
-  Hotel.find()
+  const { city } = req.query;
+  const { type } = req.query;
+
+  const criterial = {};
+  if (city) criterial.city = city;
+  if (type) criterial.type = type;
+
+  Hotel.find(criterial)
     //.populate("room")
     .then((hotels) => res.json(hotels))
     .catch(next);
@@ -25,9 +32,9 @@ module.exports.update = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.hotel)
 
 module.exports.delete = (req, res, next) => {
-  Hotel.deleteOne({_id: req.hotel.id })
-  .then(() => res.status(204).send())
-  .catch(next)
+  Hotel.deleteOne({ _id: req.hotel.id })
+    .then(() => res.status(204).send())
+    .catch(next)
 }
 
 /*module.exports.searchByCity = async (req, res, next) => {

@@ -1,27 +1,37 @@
-import React, { useEffect, useState } from 'react';
 import hotelsService from '../../services/hotels';
-import HotelItem from '../clients/hotel-item/HotelItem';
-
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import HotelByCity from '../hotelByCity/hotelByCity';
 
 function HotelsList() {
+  const [search] = useSearchParams();
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
-    hotelsService.list()
-      .then(hotels => setHotels(hotels))
-      .catch(error => console.error(error))
-  }, []);
+    async function fetchHotels() {
+      const query = {};
+      const city = search.get('city');
+      console.log(city)
+      if (city) query.city = city;
+      const type = search.get('type');
+      if (type) query.type = type;
+
+      const hotels = await hotelsService.list(query);
+      setHotels(hotels);
+      console.log(hotels)
+    }
+    fetchHotels();
+  }, [search])
 
   return (
-    <>
-      <div className="row g-2">
-        {hotels.map((hotel) => (
-          <div className="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch"  key={hotel.id}>
-            <HotelItem/>
-          </div>
-        ))}
-      </div>
-    </>
+    <div>
+      {
+        hotels !== undefined ? (
+        <HotelByCity cities={hotels} />
+      ) : (< > </>)
+    }
+     
+    </div>
   )
 }
 

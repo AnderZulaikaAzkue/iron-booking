@@ -1,52 +1,64 @@
+import { useEffect, useState } from "react";
 import "./hotelByCity.css";
 import { Link } from 'react-router-dom'
+import hotelsService from '../../services/hotels';
 
 
 const HotelByCity2 = () => {
 
+  const [hotels, setHotels] = useState([]);
+
+  useEffect(() => {
+    async function listCities() {
+      try {
+        const cities = await hotelsService.list()
+        const newCities = []
+        const cityNames = []
+        for (let city of cities) {
+          if (!cityNames.includes(city.city)) {
+            cityNames.push(
+              city.city
+            )
+            newCities.push({
+              id: city.id,
+              name: city.name,
+              city: city.city,
+              picture: city.picture
+            })
+
+          }
+
+        }
+
+        setHotels(newCities)
+
+      } catch (errors) {
+        console.error(errors)
+      }
+    }
+    listCities()
+  }, []);
+
   return (
     <div className="featured">
+      {
+        hotels !== undefined && hotels?.map(hotel => (
+          <div className="featuredItem" key={hotel.id}>
+            <Link className='city-link' to={`/places/?city=${hotel.city}`} >
+              <img
+                src={hotel.picture.length ? hotel.picture[0] : "https://pix8.agoda.net/hotelImages/283/283888/283888_110815185030576.jpg?ca=0&ce=1&s=1024x768"}
+                alt={hotel.name}
+                className="featuredImg"
+              />
+              <div className="featuredTitles">
+                <h2>{hotel.city}</h2>
+                <h3>{hotels.length} properties</h3>
+              </div>
+            </Link>
+          </div>
+        ))
+      }
 
-      <div className="featuredItem">
-        <Link className='city-link' to="/">
-          <img
-            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/5f/12/8d/caption.jpg?w=700&h=500&s=1"
-            alt=""
-            className="featuredImg"
-          />
-          <div className="featuredTitles">
-            <h2>Madrid</h2>
-            <h3>5 properties</h3>
-          </div>
-        </Link>
-      </div>
-
-      <div className="featuredItem">
-        <Link className='city-link' to="/">
-          <img
-            src="https://interrailero.com/wp-content/uploads/2022/01/que-ver-en-barcelona-mapa.jpg"
-            alt=""
-            className="featuredImg"
-          />
-          <div className="featuredTitles">
-            <h2>Barcelona</h2>
-            <h3> 6 properties</h3>
-          </div>
-        </Link>
-      </div>
-      <div className="featuredItem">
-        <Link className='city-link' to="/">
-          <img
-            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/panoramica-bilbao-guggenheim-1634221518.png"
-            alt=""
-            className="featuredImg"
-          />
-          <div className="featuredTitles">
-            <h2>Bilbao</h2>
-            <h3> 10 properties</h3>
-          </div>
-        </Link>
-      </div>
     </div>
   );
 };

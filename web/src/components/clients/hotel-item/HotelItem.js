@@ -4,6 +4,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function HotelItem({ hotel: { id, name, description, picture, city, address } }) {
+  
+
   return (
     <div className="hotel-item card text-bg-dark">
       <img src={picture} className="card-img" alt={name} />
