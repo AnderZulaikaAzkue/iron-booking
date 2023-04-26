@@ -16,7 +16,7 @@ function HotelsList() {
       if (city) query.city = city;
       const type = search.get('type');
       if (type) query.type = type;
-
+      console.log(type)
       const hotels = await hotelsService.list(query);
       setHotels(hotels);
       console.log(hotels)
