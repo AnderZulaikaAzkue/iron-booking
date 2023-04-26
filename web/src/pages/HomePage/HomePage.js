@@ -1,5 +1,3 @@
-
-
 import HotelByCity2 from "../../components/hotelByCity/hotelByCity2";
 import HotelByType from "../../components/hotelByType/hotelByType";
 
@@ -12,9 +10,7 @@ const HomePage = () => {
       <h1 className="homeTitle">Browse by property type</h1>
       <HotelByType />
       <h1 className="homeTitle">Most Popular Cities</h1>
-     
       <HotelByCity2 />
-    
     </div>
   );
 };

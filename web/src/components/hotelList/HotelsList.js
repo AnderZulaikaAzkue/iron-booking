@@ -2,6 +2,7 @@ import hotelsService from '../../services/hotels';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import HotelByCity from '../hotelByCity/hotelByCity';
+import HotelByType from '../hotelByType/hotelByType';
 
 function HotelsList() {
   const [search] = useSearchParams();
@@ -30,8 +31,13 @@ function HotelsList() {
         <HotelByCity cities={hotels} />
       ) : (< > </>)
     }
-     
+    {
+        hotels !== undefined ? (
+        <HotelByType types={hotels} />
+        ) : (< > </>)
+    }
     </div>
+    
   )
 }
 

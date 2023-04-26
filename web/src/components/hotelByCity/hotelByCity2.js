@@ -3,7 +3,6 @@ import "./hotelByCity.css";
 import { Link } from 'react-router-dom'
 import hotelsService from '../../services/hotels';
 
-
 const HotelByCity2 = () => {
 
   const [hotels, setHotels] = useState([]);
@@ -25,9 +24,7 @@ const HotelByCity2 = () => {
               city: city.city,
               picture: city.picture
             })
-
           }
-
         }
 
         setHotels(newCities)
@@ -58,7 +55,6 @@ const HotelByCity2 = () => {
           </div>
         ))
       }
-
     </div>
   );
 };

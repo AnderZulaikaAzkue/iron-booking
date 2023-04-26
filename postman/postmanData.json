@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "af258bfb-47ae-4ac0-b0f1-18f440ae5523",
+		"name": "iron-booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26677293"
+	},
+	"item": [
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "Hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/hotels",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/hotels/643d6b05fd9095c742e37985",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"hotels",
+								"643d6b05fd9095c742e37985"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel by City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/hotels/643d6b05fd9095c742e37985",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"hotels",
+								"643d6b05fd9095c742e37985"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/hotels/643d6b05fd9095c742e37985",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"hotels",
+								"643d6b05fd9095c742e37985"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Hotel Montmartre\",\n  \"description\": \"Hotel in famous Montmartre area, mondern style.\",\n  \"address\": \"Montmartre, 130\",\n  \"minPrice\": \"150\",\n  \"type\": \"Hotel\",\n  \"city\": \"Paris\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/hotels",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pictures\": \"https://majestichotelgroup.com/web/majestic/homepage/mobile/slider/00majestic-hotel-and--spa-fachada.jpg\", \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/hotels/6440ffe6c25098aeb50b21c2",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"hotels",
+								"6440ffe6c25098aeb50b21c2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Double bed room\",\n    \"price\": \"165\",\n    \"maxPeople\": 2, \n    \"minPeople\": 1, \n    \"roomNumbers\":[{\"number\":101}, {\"number\":102}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/rooms/6440ffe6c25098aeb50b21c2",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"rooms",
+								"6440ffe6c25098aeb50b21c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Double bed room\",\n    \"price\": \"165\",\n    \"maxPeople\": 2, \n    \"minPeople\": 1, \n    \"roomNumbers\":[{\"number\":101}, {\"number\":102}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/rooms/643e5f572f8ee28148477f7e/643d6b05fd9095c742e37985",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"rooms",
+								"643e5f572f8ee28148477f7e",
+								"643d6b05fd9095c742e37985"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/clients",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/clients/64417b0e4e51e652121db518/confirm",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"clients",
+								"64417b0e4e51e652121db518",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"location\": \"englad\",\n\"email\":\"anderzu85@gmail.com\",\n\"password\": \"12345678\",\n\"username\":\"lallalaa\",\n\"name\": \"pepe\",\n\"phone\":\"1233457567\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/register",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"location\": \"Italy\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/clients/64417b0e4e51e652121db518",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"clients",
+								"64417b0e4e51e652121db518"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "Bearer {{TOKEN}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const token = pm.response.json().token",
+									"console.log('setting token', token)",
+									"pm.collectionVariables.set(\"TOKEN\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"password\": \"12345678\",\n\"username\":\"juantravel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/login",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"location\": \"england\",\n\"email\":\"anderzu85@gmail.com\",\n\"password\": \"12345678\",\n\"username\":\"TomTraveller\",\n\"name\": \"Tom\",\n\"phone\":\"1233457567\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/clients/643eb38599aceb2c530bed75",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"clients",
+								"643eb38599aceb2c530bed75"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_API_URL",
+			"value": "http://localhost:3001/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
