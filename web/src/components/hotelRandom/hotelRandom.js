@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import hotelsService from '../../services/hotels';
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBRow,
   MDBCol} from 'mdb-react-ui-kit';
-import { Outlet } from 'react-router-dom';
 
 
 function HotelRandom() {
@@ -16,9 +15,10 @@ function HotelRandom() {
 
   return (
     <>
+     
       {hotels.map((hotel) => 
       <div key={hotel.id}><h1>{hotel.city}</h1>
-      <MDBRow className='row-cols-1 row-cols-md-2 g-4'>
+      <MDBRow className='row-cols-2 row-cols-md-4 g-6'>
       <MDBCol>
       <MDBCard className='mb-3'>
       <MDBCardImage position='top' src= {hotel.picture} width={250}  alt='...' />
