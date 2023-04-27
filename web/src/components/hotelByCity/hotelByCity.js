@@ -1,26 +1,6 @@
 //import "./hotelByCity.css";
 import { Link } from 'react-router-dom'
-import hotelsService from '../../services/hotels';
-import { useSearchParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-
-
 const HotelByCity = ({cities}) => {
-
-  const [search] = useSearchParams();
-  const [hotels, setHotels] = useState([]);
-
-
-  /*useEffect(() => {
-    async function fetchHotels() {
-      const query = {}
-      const city = search.get('city');
-      if (city) query.city = city;
-      const hotels = await hotelsService.list(query)
-      setHotels(hotels)
-    }
-    fetchHotels();
-  }, [search])*/
 
   return (
     <div className="featured">
@@ -39,7 +19,7 @@ const HotelByCity = ({cities}) => {
           </div>
         </Link>
       </div>
-        ) )
+        ))
        }
     
     </div>

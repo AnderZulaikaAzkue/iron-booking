@@ -10,7 +10,7 @@ module.exports.list = (req, res, next) => {
   if (type) criterial.type = type;
 
   Hotel.find(criterial)
-    //.populate("room")
+    .populate("rooms")
     .then((hotels) => res.json(hotels))
     .catch(next);
 }
