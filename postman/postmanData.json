@@ -87,7 +87,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Hotel Montmartre\",\n  \"description\": \"Hotel in famous Montmartre area, mondern style.\",\n  \"address\": \"Montmartre, 130\",\n  \"minPrice\": \"150\",\n  \"type\": \"Hotel\",\n  \"city\": \"Paris\"\n}",
+							"raw": "{\n  \"name\": \"Hotel Gran Bilbao\",\n  \"description\": \"An Luxurious hotel in the center of Bilbao\",\n  \"address\": \"Calle del Pozo, 130\",\n  \"picture\" :\"https://c.otcdn.com/imglib/hotelfotos/8/004/hotel-occidental-bilbao-20230121100016544300.jpg\",\n  \"minPrice\": \"120\",\n  \"type\": \"Hotel\",\n  \"city\": \"Bilbao\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -113,7 +113,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"pictures\": \"https://majestichotelgroup.com/web/majestic/homepage/mobile/slider/00majestic-hotel-and--spa-fachada.jpg\", \"\"\n}",
+							"raw": "{\n    \"picture\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/The_Westin_Palace_Madrid.jpg/640px-The_Westin_Palace_Madrid.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,13 +121,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_API_URL}}/hotels/6440ffe6c25098aeb50b21c2",
+							"raw": "{{BASE_API_URL}}/hotels/6444ffa88ef97580770d93bd",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"hotels",
-								"6440ffe6c25098aeb50b21c2"
+								"6444ffa88ef97580770d93bd"
 							]
 						}
 					},
@@ -145,7 +145,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Double bed room\",\n    \"price\": \"165\",\n    \"maxPeople\": 2, \n    \"minPeople\": 1, \n    \"roomNumbers\":[{\"number\":101}, {\"number\":102}]\n}",
+							"raw": "{\n    \"name\": \"Double bed room\",\n    \"price\": \"120\",\n    \"maxPeople\": 2, \n    \"minPeople\": 1, \n    \"picture\": \"https://storage.googleapis.com/static-content-hc/sites/default/files/pro-webp/cataloniagranviabilbao_hab-doble.webp\",\n    \"roomNumbers\":[{\"number\":101}, {\"number\":102}]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -153,13 +153,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_API_URL}}/rooms/6440ffe6c25098aeb50b21c2",
+							"raw": "{{BASE_API_URL}}/rooms/644503d48ef97580770d93d1",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"rooms",
-								"6440ffe6c25098aeb50b21c2"
+								"644503d48ef97580770d93d1"
 							]
 						}
 					},
@@ -241,7 +241,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\n\"location\": \"englad\",\n\"email\":\"anderzu85@gmail.com\",\n\"password\": \"12345678\",\n\"username\":\"lallalaa\",\n\"name\": \"pepe\",\n\"phone\":\"1233457567\"\n\n}",
+							"raw": "{\n\n\"location\": \"englad\",\n\"email\":\"anderzu85@gmail.com\",\n\"password\": \"12345678\",\n\"username\":\"fghdfgh\",\n\"name\": \"jaime\",\n\"phone\":\"1233457567\"\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
