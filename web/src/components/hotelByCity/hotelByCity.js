@@ -16,7 +16,6 @@ const HotelByCity = ({cities}) => {
       const query = {}
       const city = search.get('city');
       if (city) query.city = city;
-
       const hotels = await hotelsService.list(query)
       setHotels(hotels)
     }

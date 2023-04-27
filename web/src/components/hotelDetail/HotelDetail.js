@@ -28,7 +28,7 @@ import { useParams, useNavigate } from 'react-router-dom';
       {!hotel? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
         <>
           <h1>{hotel.title}</h1>
-          <h2>{hotel.room}</h2>
+          <h2>{hotel.rooms}</h2>
         </>
       )}
     </>

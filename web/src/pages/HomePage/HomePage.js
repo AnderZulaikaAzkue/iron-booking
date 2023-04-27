@@ -1,8 +1,6 @@
 import Footer from "../../components/footer/footer";
 import HotelByCity2 from "../../components/hotelByCity/hotelByCity2";
 import HotelByType from "../../components/hotelByType/hotelByType";
-
-
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -16,8 +14,6 @@ const HomePage = () => {
       <HotelByCity2 />
       <Footer/>
     </div>
-    
-    
   );
 };
 
