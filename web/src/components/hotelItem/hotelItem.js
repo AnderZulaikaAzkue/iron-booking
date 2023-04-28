@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
         </div>
         <div className="d-flex mt-auto align-items-center">
           <div className='me-auto'>
-            {city.map(tag => <span key={city} className="me-1 badge text-bg-light">{city}</span>)}
+            {name.map(name => <span key={name} className="me-1 badge text-bg-light">{name}</span>)}
           </div>
         </div>
       </div>

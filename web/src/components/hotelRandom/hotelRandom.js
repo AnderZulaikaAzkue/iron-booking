@@ -3,7 +3,7 @@ import hotelsService from '../../services/hotels';
 import { MDBCardTitle, MDBCardImage } from 'mdb-react-ui-kit';
 
 
-function HotelRandom() {
+function HotelRandom({id}) {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
@@ -15,21 +15,19 @@ function HotelRandom() {
 
   return (
     <>
-      <div id="flush-module" className="accordion-collapse collapse show">
-        <div className="accordion-body">
-          <div className="row g-2">
+    <div className='featured'>
+      
             {hotels.map((hotel) =>
-              <div className="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" key={hotel.id}><h1>{hotel.city}</h1>
-                <div className="accordion-item">
-                  <MDBCardImage position='top' src={hotel.picture} width={250} alt='...' />
-                  <MDBCardTitle>{hotel.name}</MDBCardTitle>
-                  <a href="/detail" className="btn btn-primary">Book a room</a>
+              <div className="" key={hotel.id}>
+                <div className="">
+                  <img className="featuredImg" src={hotel.picture} width={250} alt='...' />
+                  <h1>{hotel.name}</h1> 
+                  <a href={`/hotels/${id}`}  className="btn btn-primary">Book a room</a>
                 </div>
               </div>
             )}
           </div>
-        </div>
-      </div>
+       
     </>
   )
 }

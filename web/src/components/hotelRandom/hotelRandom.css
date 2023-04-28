@@ -2,8 +2,16 @@
   width: 100%;
   max-width: 1024px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+}
+
+.featuredImg{
+  float: left;
+  max-width:  100px;
+  height: 100px;
+  object-fit: cover;
+  
 }
 
 

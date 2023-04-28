@@ -31,11 +31,7 @@ function HotelsList() {
         <HotelByCity cities={hotels} />
       ) : (< > </>)
     }
-    {
-        hotels !== undefined ? (
-        <HotelByType types={hotels} />
-        ) : (< > </>)
-    }
+
     </div>
     
   )
