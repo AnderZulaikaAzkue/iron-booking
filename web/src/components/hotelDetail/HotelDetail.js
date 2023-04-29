@@ -28,8 +28,13 @@ import { useParams, useNavigate } from 'react-router-dom';
       {!hotel? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
         <>
           <h1>{hotel.name}</h1>
+          <h2> {hotel.rooms} </h2>
+          <img src= {hotel.picture} alt="" />
+          <h3> {hotel.description} </h3>
+         
         </>
-      )}
+       
+      )} 
     </>
   )
 }

@@ -6,7 +6,11 @@ const list = (query) =>  http.get('/hotels', { params: query })
 const detail = (id) => http.get(`/hotels/${id}`)
   .then((res) => res.data);
 
+  const room = (id) => http.get(`/hotels/${id}/room${id}`)
+  .then((res) => res.data);
+
 export default {
   list,
-  detail
+  detail, 
+  room
 }
