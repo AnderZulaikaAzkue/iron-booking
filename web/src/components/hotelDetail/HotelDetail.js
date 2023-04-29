@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import hotelsService from '../../services/hotels';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
  function HotelDetail() {
   const { hotelId } = useParams();
@@ -31,7 +31,7 @@ import { useParams, useNavigate } from 'react-router-dom';
           <h2> {hotel.rooms} </h2>
           <img src= {hotel.picture} alt="" />
           <h3> {hotel.description} </h3>
-         
+         <Link  to= {`/hotels/${hotelId}/${hotel.rooms}`} >check rooms</Link>
         </>
        
       )} 

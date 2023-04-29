@@ -17,8 +17,9 @@ router.delete("/hotels/:id",secure.isLogged, secure.isAdmin, /*hotelMid.exists,*
 //router.get("/searchByType", hotel.searchByType) 
 
 router.get("/rooms", room.list);
+router.get("/rooms/:id", roomMid.exists, room.detail);
 router.post("/rooms/:hotelid",/*secure.isLogged, secure.isAdmin,*/ room.create);
-router.get("/rooms/:id", room.detail);
+
 router.patch("/rooms/:id",/*secure.isLogged, secure.isAdmin, roomMid.exists,*/ room.update);
 router.delete("/rooms/:id/:hotelid",/*secure.isLogged, secure.isAdmin, roomMid.exists,*/ room.delete);
 
