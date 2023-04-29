@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
     <div className="card-img-overlay">
       <div className="d-flex flex-column h-100">
         <div className="d-flex align-items-baseline">
-          <h5 className="card-title px-3 py-1 fs-5 fw-lighter text-dark me-auto"><Link to={`/hotels/${id}`} className='text-dark link-underline-opacity-0'>{city}</Link></h5>
+          <h5 className="card-title px-3 py-1 fs-5 fw-lighter text-dark me-auto"><Link to={`/hotels/${id}`} className='text-dark link-underline-opacity-0'>{name}</Link></h5>
           <a href={rooms} target='blank' className='text-dark fs-3 link-underline-opacity-0'><i className=''></i></a>
         </div>
         <div className="d-flex mt-auto align-items-center">

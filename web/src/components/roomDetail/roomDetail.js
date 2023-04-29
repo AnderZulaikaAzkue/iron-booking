@@ -36,7 +36,6 @@ import { useParams, useNavigate } from 'react-router-dom';
           {rooms?.roomNumbers.map(room => <div>{room.number}</div>)}
          
         </>
-       
       )} 
     </>
   )
