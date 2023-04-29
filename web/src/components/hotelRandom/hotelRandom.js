@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import hotelsService from '../../services/hotels';
-import { MDBCardTitle, MDBCardImage } from 'mdb-react-ui-kit';
+import HotelItem from '../hotelItem/hotelItem';
 
 
-function HotelRandom({id}) {
+
+function HotelRandom() {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
@@ -15,19 +16,13 @@ function HotelRandom({id}) {
 
   return (
     <>
-    <div className='featured'>
-      
-            {hotels.map((hotel) =>
-              <div className="" key={hotel.id}>
-                <div className="">
-                  <img className="featuredImg" src={hotel.picture} width={250} alt='...' />
-                  <h1>{hotel.name}</h1> 
-                  <a href={`/hotels/${id}`}  className="btn btn-primary">Book a room</a>
-                </div>
-              </div>
-            )}
+      <div className='featured'>
+        {hotels.map((hotel) =>
+          <div className="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" key={hotel.id}>
+            <HotelItem hotel={hotel} />
           </div>
-       
+        )}
+      </div>
     </>
   )
 }

@@ -1,15 +1,14 @@
 import Footer from "../../components/footer/footer";
 import HotelByCity2 from "../../components/hotelByCity/hotelByCity2";
-import HotelByType from "../../components/hotelByType/hotelByType";
+import HotelByType2 from "../../components/hotelByType/hotelByType2";
 import "./HomePage.css";
 
 const HomePage = () => {
   return (
 
     <div className="homeContainer">
-     
       <h1 className="homeTitle">Browse by property type</h1>
-      <HotelByType />
+      <HotelByType2 />
       <h1 className="homeTitle">Most Popular Cities</h1>
       <HotelByCity2 />
       <Footer/>

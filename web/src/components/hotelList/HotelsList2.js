@@ -1,10 +1,9 @@
 import hotelsService from '../../services/hotels';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import HotelByCity from '../hotelByCity/hotelByCity';
+import HotelByType from '../hotelByType/hotelByType2';
 
-
-function HotelsList() {
+function HotelsList2() {
   const [search] = useSearchParams();
   const [hotels, setHotels] = useState([]);
 
@@ -26,13 +25,15 @@ function HotelsList() {
 
   return (
     <div>
-      {
+    {
         hotels !== undefined ? (
-        <HotelByCity cities={hotels} />
+        <HotelByType types={hotels} />
       ) : (< > </>)
     }
+
     </div>
+    
   )
 }
 
-export default HotelsList
+export default HotelsList2

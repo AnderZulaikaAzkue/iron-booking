@@ -27,8 +27,7 @@ import { useParams, useNavigate } from 'react-router-dom';
     <>
       {!hotel? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
         <>
-          <h1>{hotel.title}</h1>
-         
+          <h1>{hotel.name}</h1>
         </>
       )}
     </>

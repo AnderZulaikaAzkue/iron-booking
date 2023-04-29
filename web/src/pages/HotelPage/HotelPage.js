@@ -1,10 +1,11 @@
 import React from 'react'
+import HotelDetail from '../../components/hotelDetail/HotelDetail'
 
  function HotelPage() {
   return (
-    <div>
-    <HotelPage/>
-    </div>
+    <>
+      <HotelDetail />
+    </>
   )
 }
 
