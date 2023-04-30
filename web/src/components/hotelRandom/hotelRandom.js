@@ -4,7 +4,7 @@ import HotelItem from '../hotelItem/hotelItem';
 
 
 
-function HotelRandom() {
+function HotelRandom( searchResults) {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
