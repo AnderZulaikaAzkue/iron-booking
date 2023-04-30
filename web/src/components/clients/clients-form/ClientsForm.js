@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm,  } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import clientsService from '../../../services/clients';
+import { MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBCheckbox } from 'mdb-react-ui-kit';
 
 function ClientsForm() {
   // https://react-hook-form.com/get-started#Applyvalidation
@@ -32,11 +33,17 @@ function ClientsForm() {
 
  
   return (
-    <form onSubmit={handleSubmit(onClientSubmit)}>
-      <div className="row g-2">
+    <>
+        <MDBContainer fluid className="p-3 my-5">
+          <MDBRow>
+            <MDBCol col='10' md='6'>
+              <img src="https://www.pngmart.com/files/11/Earth-Travel-World-PNG-Photo.png" class="img-fluid" alt="Phone image" />
+            </MDBCol>
+            <MDBCol col='4' md='6'>
+            <form onSubmit={handleSubmit(onClientSubmit)}>
+      <div className="">
         
         {/* NAME */}
-        <div className="col-md-6">
           <div className="input-group">
             <span className="input-group-text"><i className='fa fa-user fa-fw'></i></span>
             <input
@@ -47,10 +54,9 @@ function ClientsForm() {
               })} />
             {errors.name && <div className='invalid-feedback'>{errors.name?.message}</div>}
           </div>
-        </div>
+      
 
         {/* USERNAME */}
-        <div className="col-md-6">
           <div className="input-group">
             <span className="input-group-text"><i className='fa fa-tag fa-fw'></i></span>
             <input
@@ -65,10 +71,9 @@ function ClientsForm() {
               })} />
             {errors.username && <div className='invalid-feedback'>{errors.username?.message}</div>}
           </div>
-        </div>
+       
 
         {/* EMAIL */}
-        <div className="col-md-6">
           <div className="input-group">
             <span className="input-group-text"><i className='fa fa-envelope-o fa-fw'></i></span>
             <input
@@ -83,10 +88,9 @@ function ClientsForm() {
               })} />
             {errors.email && <div className='invalid-feedback'>{errors.email?.message}</div>}
           </div>
-        </div>
+        
 
         {/* PASSWORD */}
-        <div className="col-md-6">
           <div className="input-group">
             <span className="input-group-text"><i className='fa fa-lock fa-fw'></i></span>
             <input
@@ -101,10 +105,9 @@ function ClientsForm() {
               })} />
             {errors.password && <div className='invalid-feedback'>{errors.password?.message}</div>}
           </div>
-        </div>
+        
 
         {/* LOCATION */}
-        <div className="col-md-6">
           <div className="input-group">
             <span className="input-group-text"><i className='fa fa-globe fa-fw'></i></span>
             <input
@@ -116,15 +119,36 @@ function ClientsForm() {
             {errors.location && <div className='invalid-feedback'>{errors.location?.message}</div>}
           </div>
         </div>
-      </div>
+      
       
       {serverError && <div className="alert alert-danger d-none d-lg-block">{serverError}</div>}
-
-      <div className="d-grid mt-2">
-        <button type="submit" className='btn btn-primary'>Register</button>
-      </div>
-    </form>
-  )
+    
+                <div className="d-flex justify-content-between mx-4 mb-4">
+                  <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+                  <a href="!#">Forgot password?</a>
+                </div>
+    
+                 <button type="submit" className='btn btn-primary'>Register</button>
+    
+                <div className="divider d-flex align-items-center my-4">
+                  <p className="text-center fw-bold mx-3 mb-0">OR</p>
+                </div>
+    
+                <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#3b5998' }}>
+                  <MDBIcon fab icon="facebook-f" className="mx-2" />
+                  Continue with facebook
+                </MDBBtn>
+    
+                <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#55acee' }}>
+                  <MDBIcon fab icon="twitter" className="mx-2" />
+                  Continue with twitter
+                </MDBBtn>
+              </form>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+        </>
+      );
 }
 
 export default ClientsForm
