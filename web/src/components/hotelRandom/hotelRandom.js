@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import hotelsService from '../../services/hotels';
 import HotelItem from '../hotelItem/hotelItem';
+import Footer from '../footer/footer';
 
 
 
-function HotelRandom( searchResults) {
+function HotelRandom() {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
@@ -18,12 +19,12 @@ function HotelRandom( searchResults) {
     <>
       <div className='featured'>
         {hotels.map((hotel) =>
-          <div className="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" key={hotel.id}>
+          <div className="" key={hotel.id}>
             <HotelItem hotel={hotel} />
-        
           </div>
         )}
       </div>
+      <Footer />
     </>
   )
 }

@@ -3,6 +3,7 @@ import hotelsService from '../../services/hotels';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import Footer from "../footer/footer";
+import "./roomDetail.css";
 
 
 function RoomDetail() {
@@ -30,6 +31,7 @@ function RoomDetail() {
 
   return (
     <>
+    <div className="roomDetail">
       <div className="hotelDetailContainer">
         {!rooms ? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
           <>
@@ -111,6 +113,7 @@ function RoomDetail() {
             </Card>
           </>
         )}
+      </div>
       </div>
       <Footer />
     </>

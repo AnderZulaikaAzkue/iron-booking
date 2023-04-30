@@ -3,6 +3,7 @@ import "./footer.css";
 
  function Footer() {
   return (
+    <div className='mainFooter'>
     <div className="footer">
     <div className="fLists">
       <ul className="fList">
@@ -45,8 +46,9 @@ import "./footer.css";
         <li className="fListItem">Terms & conditions</li>
       </ul>
     </div>
-
+</div>
   </div>
+  
   )
 }
 

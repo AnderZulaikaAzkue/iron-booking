@@ -1,18 +1,35 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { Card, Row, Text } from "@nextui-org/react";
+
 
  function HotelItem({hotel: { id, name, picture, city, }}) {
   return (
-    <Link to={`/hotels/${id}`} style={{textDecoration: 'none', color: 'black'}}>
     <div>
-      <img src={picture[0]} alt="hotel" width={'500px'}/>
-    </div>
-    <div className='d-flex flex-column'>
-      <span className='mt-2'><b>{name}</b></span>
-      <span className='mt-1'>{city}</span>
-
-    </div>
-  </Link>
+    <Card isPressable>
+            <Card.Body css={{ p: 0 }}>
+            <Link to={`/hotels/${id}`} >
+              <Card.Image
+                src={picture}
+                objectFit="cover"
+                width="100%"
+                height={140}
+                alt={name}
+              />
+               </Link>
+            </Card.Body>
+            <Card.Footer css={{ justifyItems: "flex-start" }}>
+              <Row wrap="wrap" justify="space-between" align="center">
+                <Text b>{city}</Text>
+                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
+                  {name}
+                </Text>
+              </Row>
+            </Card.Footer>
+          </Card>
+          </div>
+          
+         
   )
 }
 export default HotelItem
