@@ -8,7 +8,7 @@ function HotelByCity({ id, cities, }) {
       {
         cities?.map(city => (
           <div className="featuredItem" key={city.id}>
-            <Link className='city-link' to={`/hotels/${id}`}  >
+            <Link className='city-link' to={`/hotels/${id}`}   >
               <img
                 src={city.picture}
                 alt={city.name}

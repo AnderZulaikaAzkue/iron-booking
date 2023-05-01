@@ -15,6 +15,7 @@ router.patch("/hotels/:id",/*secure.isLogged, secure.isAdmin,*/ hotelMid.exists,
 router.delete("/hotels/:id",/*secure.isLogged, secure.isAdmin,*/  hotelMid.exists,hotel.delete)
 //router.get("/hotels/searchByCity", hotel.searchByCity)
 //router.get("/searchByType", hotel.searchByType) 
+router.get("room/:id", hotel.getHotelRooms);
 
 router.get("/rooms", room.list);
 router.get("/rooms/:id", roomMid.exists, room.detail);

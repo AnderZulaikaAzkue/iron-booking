@@ -5,8 +5,12 @@ import hotelsService from '../../services/hotels';
 import "./HotelsPage.css";
 
 function HotelPage() {
-  const [onSearch, setSearch] = useState('');
+  const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([])
+
+  const onSearch = (value) => {
+    setSearch(value)
+  }
 
   useEffect(() => {
     hotelsService.list()
@@ -19,10 +23,10 @@ function HotelPage() {
     <>
     <div className='hotelsPageContainer' >
       <div>
-        <SearchBar onSearch={onSearch} setSearchResults={setSearchResults} />
+        <SearchBar search={search} onSearch={onSearch} />
       </div>
       <div></div>
-      <HotelRandom searchResults={searchResults} />
+      <HotelRandom searchResults={searchResults} search={search} />
       </div>
     </>
   )
