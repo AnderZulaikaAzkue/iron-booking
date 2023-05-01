@@ -1,5 +1,6 @@
-import "./hotelByCity.css";
+
 import { Link } from 'react-router-dom'
+import "./hotelByCity.css";
 
 function HotelByCity({ id, cities, }) {
 

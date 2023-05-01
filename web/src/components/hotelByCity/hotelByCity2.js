@@ -26,7 +26,6 @@ const HotelByCity2 = () => {
             })
           }
         }
-
         setHotels(newCities)
 
       } catch (errors) {
@@ -49,7 +48,7 @@ const HotelByCity2 = () => {
               />
               <div className="featuredTitles">
                 <h2>{hotel.city}</h2>
-                <h3>{hotels.length} properties</h3>
+                
               </div>
             </Link>
           </div>

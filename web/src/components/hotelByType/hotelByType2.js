@@ -21,7 +21,7 @@ function HotelByType2() {
             newTypes.push({
               id: type.id,
               name: type.name,
-              city: type.city,
+              type: type.type,
               picture: type.picture
             })
           }
@@ -36,6 +36,7 @@ function HotelByType2() {
   }, []);
 
   return (
+    
     <div className="featured">
       {
         hotels !== undefined && hotels?.map(hotel => (
@@ -46,11 +47,10 @@ function HotelByType2() {
                 alt={hotel.name}
                 className="featuredImg"
               />
-              <div className="featuredTitles">
-                <h2>{hotel.type}</h2>
-                <h3>{hotels.length} properties</h3>
-              </div>
             </Link>
+            <div className="featuredTitles">
+              <h2>{hotel.type}</h2>
+            </div>
           </div>
         ))
       }

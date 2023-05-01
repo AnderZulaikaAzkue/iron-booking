@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
+import "./hotelByType.css";
 
 function HotelByType({ id, types }) {
 
   return (
-    <div className="featured">
+    <div className="">
       {
         types?.map(type => (
-          <div className="featuredItem" key={type.id}>
+          <div className="" key={type.id}>
             <Link className='city-link' to={`/hotels/${id}`}  >
               <img
                 src={type.picture}
