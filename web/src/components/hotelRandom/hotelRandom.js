@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import hotelsService from '../../services/hotels';
 import HotelItem from '../hotelItem/hotelItem';
 import Footer from '../footer/footer';
-
-
 
 function HotelRandom({ search, hotels }) {
 
@@ -20,7 +16,6 @@ function HotelRandom({ search, hotels }) {
     </>
   )
 }
-
 
 export default HotelRandom
 

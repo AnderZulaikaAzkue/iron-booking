@@ -1,21 +1,17 @@
 import { useEffect, useState, useContext  } from "react";
 import hotelsService from '../../services/hotels';
-import { AuthContext } from '../../contexts/AuthStore'
-import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import Footer from "../footer/footer";
-import "./roomDetail.css";
-import Reserve from "../reserve/reserve";
+import { AuthContext } from '../../contexts/AuthStore'
 
 
 function RoomDetail() {
   const { roomsId } = useParams();
   const navigate = useNavigate();
   const [rooms, setRoom] = useState();
-  const [openModal, setOpenModal] = useState(false);
   const { user } = useContext(AuthContext);
-  const location = useLocation();
-  const id = location.pathname.split("/")[2];
+  const [booking, setBooking] = useState(false);
 
   useEffect(() => {
     async function fetchRoom() {
@@ -37,7 +33,7 @@ function RoomDetail() {
 
   const handleClick = () => {
     if (user) {
-      setOpenModal(true);
+      setBooking(true);
     } else {
       navigate("/login");
     }
@@ -45,7 +41,6 @@ function RoomDetail() {
 
   return (
     <>
-    <div className="roomDetail">
       <div className="hotelDetailContainer">
         {!rooms ? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
           <>
@@ -109,22 +104,22 @@ function RoomDetail() {
                         rounded
                         css={{ color: "#94f9f0", bg: "#94f9f026" }}
                       >
-                       <button onClick={handleClick}>Reserve or Book Now!</button>
+                        <button onClick={handleClick}>Reserve or Book Now!</button>
+                        
                       </Button>
                     </Row>
                   </Col>
                 </Row>
               </Card.Footer>
             </Card>
-            {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
           </>
         )}
-      </div>
       </div>
       <Footer />
     </>
   )
 }
-
+     
+ 
 
 export default RoomDetail

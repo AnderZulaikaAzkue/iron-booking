@@ -1,4 +1,4 @@
-import hotelsService from '../../services/hotels';
+ import hotelsService from '../../services/hotels';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import HotelByCity from '../hotelByCity/hotelByCity';
