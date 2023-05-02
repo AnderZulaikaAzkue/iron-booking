@@ -6,7 +6,7 @@ import "./HotelsPage.css";
 
 function HotelPage() {
   const [search, setSearch] = useState('');
-  const [searchResults, setSearchResults] = useState([])
+  const [hotels, setHotels] = useState([])
 
   const onSearch = (value) => {
     setSearch(value)
@@ -14,7 +14,7 @@ function HotelPage() {
 
   useEffect(() => {
     hotelsService.list()
-      .then(searchResults => setSearchResults(searchResults))
+      .then(hotels => setHotels(hotels))
       .catch(error => console.error(error))
   }, []);
 
@@ -26,7 +26,7 @@ function HotelPage() {
         <SearchBar search={search} onSearch={onSearch} />
       </div>
       <div></div>
-      <HotelRandom searchResults={searchResults} search={search} />
+      <HotelRandom hotels={hotels} search={search} />
       </div>
     </>
   )

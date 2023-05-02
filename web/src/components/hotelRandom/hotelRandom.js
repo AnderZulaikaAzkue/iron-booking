@@ -5,20 +5,12 @@ import Footer from '../footer/footer';
 
 
 
-function HotelRandom() {
-  const [hotels, setHotels] = useState([]);
-
-  useEffect(() => {
-    hotelsService.list()
-      .then(hotels => setHotels(hotels))
-      .catch(error => console.error(error))
-  }, []);
-
+function HotelRandom({ search, hotels }) {
 
   return (
     <>
       <div className='featured'>
-        {hotels.map((hotel) =>
+        {hotels.filter(hotel => search === undefined || hotel.city.toLowerCase().includes(search.toLowerCase())).map((hotel) =>
           <div className="" key={hotel.id}>
             <HotelItem hotel={hotel} />
           </div>
