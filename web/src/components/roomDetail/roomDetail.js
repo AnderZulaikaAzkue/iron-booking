@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext  } from "react";
-import hotelsService from '../../services/hotels';
+import hotelsService from '../../services/hotels'; 
+import clientsService from '../../services/clients'; 
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import Footer from "../footer/footer";
@@ -7,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthStore'
 
 
 function RoomDetail() {
-  const { roomsId } = useParams();
+  const { roomsId, hotelId } = useParams();
   const navigate = useNavigate();
   const [rooms, setRoom] = useState();
   const { user } = useContext(AuthContext);
@@ -31,12 +32,15 @@ function RoomDetail() {
     fetchRoom();
   }, [roomsId]);
 
-  const handleClick = () => {
+  const handleClick = async() => {
+    console.log(roomsId)
     if (user) {
       setBooking(true);
     } else {
       navigate("/login");
     }
+    const booking = await clientsService.booking(hotelId, roomsId, user)
+    console.log(booking)
   };
 
   return (
@@ -103,8 +107,9 @@ function RoomDetail() {
                         auto
                         rounded
                         css={{ color: "#94f9f0", bg: "#94f9f026" }}
+                        onPress={handleClick}
                       >
-                        <button onClick={handleClick}>Reserve or Book Now!</button>
+                     {booking ? 'Booked' : ' Reserve or Book Now!'}
                         
                       </Button>
                     </Row>

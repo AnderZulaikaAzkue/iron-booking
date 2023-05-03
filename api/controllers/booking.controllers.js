@@ -1,4 +1,4 @@
-const Booking = ('../models/booking.model');
+const Booking = require('../models/booking.model');
 const createError = require("http-errors");
 
 module.exports.list = (req, res, next) => {
@@ -7,10 +7,18 @@ module.exports.list = (req, res, next) => {
     .catch(next);
 }
 module.exports.create = (req, res, next) => {
-  console.log(req.body);
-  Booking.create(req.body)
+  console.log(req.body); 
+  console.log(req.params.hotelId);
+  console.log(req.params.roomsId);
+
+ Booking.create({
+  hotels: req.params.hotelId, 
+  rooms: req.params.roomsID, 
+  booked: true,
+  clients: req.body.Id
+ })
     .then((booking) => res.status(201).json(booking))
-    .catch(next);
+    .catch(next); 
 }
 
 module.exports.update = (req, res, next) => {

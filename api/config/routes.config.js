@@ -27,7 +27,7 @@ router.delete("/rooms/:id/:hotelid",/*secure.isLogged, secure.isAdmin,*/ roomMid
 
 router.get("/booking", booking.list);
 router.get("/bookings/:id", bookingMid.exists, booking.detail);
-router.post("/bookings/:hotelid/:roomid",/*secure.isLogged, secure.isAdmin,*/ booking.create);
+router.post("/bookings/:hotelId/:roomsId",/*secure.isLogged, secure.isAdmin,*/ booking.create);
 router.patch("/bookings/:id",/*secure.isLogged, secure.isAdmin,*/ bookingMid.exists, booking.update);
 router.delete("/bookings/:id/:hotelid:roomid",/*secure.isLogged, secure.isAdmin,*/ bookingMid.exists, booking.delete);
 
