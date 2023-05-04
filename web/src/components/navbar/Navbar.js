@@ -27,12 +27,12 @@ function Navbar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item"><NavLink to="/" className={renderNavLinkClassName}>Home</NavLink></li>
             <li className="nav-item"><NavLink to="/hotels" className={renderNavLinkClassName}>Hotels</NavLink></li>
-            { user?.email && <li className="nav-item"><NavLink to="/create-hotel" className={renderNavLinkClassName}>Book a Hotel</NavLink></li> }
+            { user?.email && <li className="nav-item"><NavLink to="/hotels" className={renderNavLinkClassName}>Book a Hotel</NavLink></li> }
           </ul>
           <ul className="navbar-nav mb-2 mb-lg-0">
             {(user?.email) ? (
               <>
-                <li className="nav-item"><NavLink to="/clients/me" className={renderNavLinkClassName}>{user.email}</NavLink></li>
+                <li className="nav-item"><NavLink to={`/clients/${user.id}`} className={renderNavLinkClassName}>{user.email}</NavLink></li>
                 <li className="nav-item"><button className='nav-link' onClick={() => logout()}>Logout</button></li>
               </>
             ) : (

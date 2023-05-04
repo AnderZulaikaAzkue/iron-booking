@@ -9,6 +9,7 @@ import HotelDetail from "./components/hotelDetail/HotelDetail";
 import HotelsPage from "./pages/HotelsPage/HotelsPage";
 import HotelPage from "./pages/HotelPage/HotelPage";
 import RoomsPage from "./pages/RoomsPage/RoomsPage";
+import ClientDetail from "./components/clients/client-detail/ClientDetail";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/hotels/:hotelId/:roomsId" element={ <RoomsPage /> } />
           <Route path="/places" element={<HotelsList/>} />
           <Route path="/detail" element={<HotelDetail/>} />
+          <Route path="/clients/:clientsId" element={ <ClientDetail/>} />
         </Routes>
 
       </AuthStore>

@@ -52,8 +52,9 @@ function RoomDetail() {
               <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
                 <Col>
                   <Text size={18} weight="bold" transform="uppercase" color="#9E9E9E">
-                    {rooms?.name}
+                  {rooms?.name}
                   </Text>
+          
                   <Text h3 color="white">
                    Room price {rooms?.price} 
                   </Text>
@@ -95,7 +96,10 @@ function RoomDetail() {
                       <Col>
 
                         <Text color="#d1d1d1" size={20}>
-                          {rooms?.description}
+                          Maximum people in the Room {rooms?.maxPeople}
+                        </Text>
+                        <Text color="#d1d1d1" size={20}>
+                          Minimum people in the Room {rooms?.minPeople}
                         </Text>
                       </Col>
                     </Row>
