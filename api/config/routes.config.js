@@ -33,6 +33,7 @@ router.delete("/bookings/:id/:hotelid:roomid",/*secure.isLogged, secure.isAdmin,
 
 
 router.get("/clients", client.list);
+router.get("/clients/:id", client.list);
 router.post("/register", client.create);
 router.get("/clients/:id/confirm", clientMid.exists, client.confirm);
 router.patch("/clients/:id", secure.auth, secure.isLogged, client.update);

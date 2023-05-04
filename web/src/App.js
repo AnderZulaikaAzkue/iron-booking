@@ -26,7 +26,7 @@ function App() {
           <Route path="/hotels/:hotelId/:roomsId" element={ <RoomsPage /> } />
           <Route path="/places" element={<HotelsList/>} />
           <Route path="/detail" element={<HotelDetail/>} />
-          <Route path="/clients/:clientsId" element={ <ClientDetail/>} />
+          <Route path="/clients/:clientId" element={ <ClientDetail/>} />
         </Routes>
 
       </AuthStore>

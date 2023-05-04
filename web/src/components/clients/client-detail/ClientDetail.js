@@ -11,7 +11,7 @@ import clientsService from '../../../services/clients';
     async function fetchClient() {
       try {
         const client = await clientsService.get(clientId);
-        setClient (client);
+        setClient(client[0]);
       } catch (error) {
         console.error(error);
       }
@@ -23,7 +23,8 @@ import clientsService from '../../../services/clients';
     <>
       {!client ? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
         <>
-          <h1>hola</h1>
+          <h1>{client.name}</h1>
+          <h1>Clients booking</h1>
         </>
       )}
     </>

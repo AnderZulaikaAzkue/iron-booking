@@ -7,15 +7,12 @@ module.exports.list = (req, res, next) => {
     .catch(next);
 }
 module.exports.create = (req, res, next) => {
-  console.log(req.body); 
-  console.log(req.params.hotelId);
-  console.log(req.params.roomsId);
 
  Booking.create({
   hotels: req.params.hotelId, 
-  rooms: req.params.roomsID, 
+  rooms: req.params.roomsId, 
   booked: true,
-  clients: req.body.Id
+  clients: req.body.id
  })
     .then((booking) => res.status(201).json(booking))
     .catch(next); 

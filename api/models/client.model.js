@@ -60,6 +60,12 @@ const clientSchema = new Schema(
   }
 );
 
+clientSchema.virtual("bookings", {
+  ref: "Booking",
+  localField: "_id",
+  foreignField: "clients"
+});
+
 clientSchema.pre("save", function (next) {
   const client = this;
 

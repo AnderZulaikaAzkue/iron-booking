@@ -16,6 +16,7 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../contexts/SearchContext";
 import { AuthContext } from "../../contexts/AuthContext";
+import { NavLink,  } from 'react-router-dom'
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -65,7 +66,7 @@ const Header = ({ type }) => {
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <NavLink to="/hotels" >Hotels</NavLink>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />

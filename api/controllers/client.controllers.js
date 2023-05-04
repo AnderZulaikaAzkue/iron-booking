@@ -6,7 +6,11 @@ const jwt = require("jsonwebtoken");
 const clientConfirmationRequired = process.env.USER_CONFIRMATION_REQUIRED = true
 
 module.exports.list = (req, res, next) => {
-  Client.find()
+  const criterial = {};
+  if (req.params.id) criterial._id = req.params.id;
+
+  Client.find(criterial)
+    .populate("bookings")
     .then((clients) => res.json(clients))
     .catch(next);
 };

@@ -6,7 +6,7 @@ const create = (client) => http.post('/register', client)
 const login = (client) => http.post('/login', client)
   .then((res) => res.data);
 
-  const get = (id) => http.get(`/clients/${id}`)
+const get = (clientId) => http.get(`/clients/${clientId}`)
   .then((res) => res.data);
 
 const booking = (hotelId, roomId, client) => http.post(`/bookings/${hotelId}/${roomId}`, client)

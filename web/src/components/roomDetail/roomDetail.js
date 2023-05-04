@@ -32,7 +32,7 @@ function RoomDetail() {
     fetchRoom();
   }, [roomsId]);
 
-  const handleClick = async() => {
+  const handleClick = async () => {
     console.log(roomsId)
     if (user) {
       setBooking(true);
