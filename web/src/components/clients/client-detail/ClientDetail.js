@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import clientsService from '../../../services/clients';
+import './client-detail.css'
 
-
- function ClientDetail() {
+ function ClientDetail({ booking }) {
   const [client, setClient] = useState();
   const { clientId } = useParams();
 
@@ -23,13 +23,23 @@ import clientsService from '../../../services/clients';
     <>
       {!client ? (<p><i className='fa fa-gear fa-spin'></i>Loading...</p>) : (
         <>
-          <h1>{client.name}</h1>
-          <h1>Clients booking</h1>
+        <div className="client-info">
+          <h1 className="name">Your name is: {client.name}</h1>
+          <h3 className="name"> Your user name is: {client.username}</h3>
+          <h4 className="title"> You are from: {client.location}</h4>
+          Bookings:
+          <ul>
+            {client.bookings.map(b => (
+              <li>{JSON.stringify(b)}</li>
+            ))}
+          </ul>
+          </div>
         </>
       )}
     </>
   )
 }
+
 
 
 export default ClientDetail
